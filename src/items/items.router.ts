@@ -4,6 +4,7 @@
 import express, { Request, Response } from "express";
 import * as ItemService from "./items.service";
 import { Note, Item, Summary } from "./item.interface";
+import { validate, linkSchema } from "./items.validation";
 
 /**
  * Router Definition
@@ -53,7 +54,7 @@ itemsRouter.get("/:id", async (req: Request, res: Response) => {
 
 // POST items
 
-itemsRouter.post("/", async (req: Request, res: Response) => {
+itemsRouter.post("/", validate(linkSchema), async (req: Request, res: Response) => {
   try {
     const item: Note = req.body;
     const newItem = await ItemService.create(item);
@@ -66,7 +67,7 @@ itemsRouter.post("/", async (req: Request, res: Response) => {
 
 // PUT items/:id
 
-itemsRouter.patch("/:id", async (req: Request, res: Response) => {
+itemsRouter.patch("/:id", validate(linkSchema), async (req: Request, res: Response) => {
   const id: number = parseInt(req.params.id, 10);
   try {
     const itemUpdate:Item = req.body;

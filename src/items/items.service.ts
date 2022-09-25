@@ -39,6 +39,42 @@ export let notes: Items = {
     dates: "",
     status: "active",
   },
+  4:{
+    id:4,
+    name: "Touch the sky",
+    createdAt: "1663063465000",
+    category: "Idea",
+    content: "I need to get high",
+    dates: "",
+    status: "active",
+  },
+  5:{
+    id:5,
+    name: "Good feature",
+    createdAt: "1663236265000",
+    category:"Idea",
+    content: "Make money",
+    dates: "",
+    status: "active",
+  },
+  6:{
+    id:6,
+    name: "Scramble eggs",
+    createdAt: "1663409065000",
+    category: "Task",
+    content: "I want to eat",
+    dates: "",
+    status: "active",
+  },
+  7:{
+    id:7,
+    name: "Save the world",
+    createdAt: "1663495465000",
+    category: "Task",
+    content: "I want to leave in peace",
+    dates: "",
+    status: "active",
+  },
 };
 
 /**

@@ -27,6 +27,8 @@ itemsRouter.get("/", async (req: Request, res: Response) => {
   }
 });
 
+// GET items/stats
+
 itemsRouter.get("/stats", async (req: Request, res: Response) => {
       try {
       const stats:Summary = await ItemService.statistics();

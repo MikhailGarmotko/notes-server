@@ -3,13 +3,10 @@ import { Request, Response, NextFunction } from "express";
 
 export const linkSchema = yup.object({
     body: yup.object({
-        name: yup.string().min(2).max(15).required(),
+        name: yup.string().min(2).max(25).required(),
         category: yup.string().oneOf(['Task', 'Idea', 'Random Thought']).required(),
         content: yup.string().required(),
-        status: yup.string().oneOf(['active', 'archived']).required(),
-        params: yup.object({
-        id: yup.number().required(),
-        }),
+        status: yup.string().oneOf(['active', 'archive']).required(),
     })
 });
 
